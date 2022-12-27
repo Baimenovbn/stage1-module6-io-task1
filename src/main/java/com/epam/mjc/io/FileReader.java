@@ -17,7 +17,8 @@ public class FileReader {
                 builder.append((char) read);
             }
 
-        } catch (IOException ignored) {
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         String[] keyValuePairs = builder.toString().split("\\R");
@@ -38,6 +39,9 @@ public class FileReader {
                     break;
                 case "Phone":
                     profile.setPhone(Long.parseLong(keyValue[1]));
+                    break;
+                default:
+                    System.out.println("Field name is not in the scope" + fieldName);
                     break;
             }
 
