@@ -41,7 +41,7 @@ public class FileReader {
                     profile.setPhone(Long.parseLong(keyValue[1]));
                     break;
                 default:
-                    System.out.println("Field name is not in the scope" + fieldName);
+                    System.err.println("Field name is not in the scope" + fieldName);
                     break;
             }
 
