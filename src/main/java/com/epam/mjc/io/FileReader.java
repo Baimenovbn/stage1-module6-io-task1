@@ -3,6 +3,7 @@ package com.epam.mjc.io;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -43,7 +44,7 @@ public class FileReader {
                     profile.setPhone(Long.parseLong(keyValue[1]));
                     break;
                 default:
-                    LOGGER.warning("Field name is not in the scope" + fieldName);
+                    LOGGER.log(Level.SEVERE, () -> "Wrong field name" + fieldName);
                     break;
             }
 
